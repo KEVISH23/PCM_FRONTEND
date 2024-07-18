@@ -1,0 +1,21 @@
+$themeColor:#2B3640 ;
+.menuText{
+    font-weight: 500 !important;
+    font-size: 20px !important;
+}
+
+.dropdownMenu{
+    background-color: white;
+    border:1px solid white;
+    border-radius: 10px;
+    .nav-link{
+        color:$themeColor;
+        padding: 10px;
+    }
+}
+
+.active{
+    background-color: $themeColor;
+    color: #fff !important;
+    border-radius: 5px;
+}

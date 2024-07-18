@@ -1,0 +1,134 @@
+<!-- <div class="card" style="width:25rem">
+    <div class="card-header h3 text-center p-4">
+      Register
+    </div>
+    <div class="card-body p-4">
+      <form [formGroup]="registrationForm" (ngSubmit)="submitForm()">
+        <div class="form-group">
+            <label for="username">Username</label>
+            <input formControlName="userName" type="text" class="form-control" id="username" placeholder="Enter username" [ngClass]="{'is-valid': registrationForm.controls['userName'].valid, 'is-invalid': registrationForm.controls['userName'].touched && registrationForm.controls['userName'].invalid}">
+            <p *ngIf="(registrationForm.controls['userName'].errors?.['required'] && registrationForm.controls['userName'].touched )"
+                class="text-danger">Required</p>
+            <p *ngIf="(registrationForm.controls['userName'].errors?.['minlength'] && registrationForm.controls['userName'].touched )"
+                class="text-danger">Minimum 4 length is required</p>
+          </div>
+          <div class="form-group mt-2">
+            <label for="email">Email address</label>
+            <input formControlName="email" type="email" class="form-control" id="email" placeholder="Enter email" [ngClass]="{'is-valid': registrationForm.controls['email'].valid, 'is-invalid': registrationForm.controls['email'].touched && registrationForm.controls['email'].invalid}">
+            <p *ngIf="(registrationForm.controls['email'].errors?.['required'] && registrationForm.controls['email'].touched )"
+                class="text-danger">Required</p>
+          </div>
+          <div class="form-group mt-2">
+            <label for="password">Password</label>
+            <input formControlName="password" type="password" class="form-control" id="password" placeholder="Password" [ngClass]="{'is-valid': registrationForm.controls['password'].valid, 'is-invalid': registrationForm.controls['password'].touched && registrationForm.controls['password'].invalid}">
+            <p *ngIf="(registrationForm.controls['password'].errors?.['required'] && registrationForm.controls['password'].touched )"
+                class="text-danger">Required</p>
+            <p *ngIf="(registrationForm.controls['password'].errors?.['minlength'] && registrationForm.controls['password'].touched )"
+                class="text-danger">Minimum 4 length is required</p>
+          </div>
+          <div class="form-group mt-2">
+            <label for="role">Role</label>
+            <select formControlName="role" class="form-select" id="role">
+              <option value="User">User</option>
+              <option value="Admin">Admin</option>
+            </select>
+          </div>
+        <div class="d-flex flex-column gap-2 justify-content-center">
+            <button [disabled]="registrationForm.invalid" type="submit" class="mt-4 btn btn-primary">Register</button>
+            <a class="text-center" routerLink="/auth/login">Login Here!!!</a>
+        </div>
+      </form>
+    </div>
+  </div> -->
+
+
+<div class="row">
+  <div class="col-xl-9 col-lg-9 col-md-7 col-12 mx-auto">
+    <div class="container vh-100 d-flex flex-column justify-content-center align-items-center">
+      <div class="row py-2">
+        <div class="col-12">
+          <p class="loginText">Register to our WebApp</p>
+        </div>
+      </div>
+      <div class="row py-2" style="width: 100%;">
+        <div class="col-12 d-flex justify-content-center">
+          <hr class="hr">
+        </div>
+      </div>
+      <div class="row py-2">
+        <div class="col-12">
+          <p class="socialText">Fill the details to register</p>
+        </div>
+      </div>
+      <div class="row py-2 formRow">
+        <div class="col-12">
+          <form class="registrationForm" [formGroup]="registrationForm" (ngSubmit)="submitForm()">
+            <div class="form-group p-2">
+              <label class="form-label" for="email">User Name</label>
+              <div class="input-group">
+                <span class="input-group-text">
+                  <i class="fa-solid fa-signature fa-lg"></i>
+                </span>
+                <input formControlName="userName" type="text" class="form-control" id="userName" placeholder="Enter Name"
+                  [ngClass]="{'is-valid': registrationForm.controls['userName'].valid, 'is-invalid': registrationForm.controls['userName'].errors && isSubmitted}">
+              </div>
+
+              <p *ngIf="(registrationForm.controls['userName'].errors?.['required'] && isSubmitted)" class="text-danger">
+                Required</p>
+            </div>
+            <div class="form-group p-2">
+              <label class="form-label" for="email">Email address</label>
+              <div class="input-group">
+                <span class="input-group-text">
+                  <i class="fa-regular fa-lg fa-envelope"></i>
+                </span>
+                <input formControlName="email" type="email" class="form-control" id="email" placeholder="Enter email"
+                  [ngClass]="{'is-valid': registrationForm.controls['email'].valid, 'is-invalid': registrationForm.controls['email'].errors && isSubmitted}">
+              </div>
+
+              <p *ngIf="(registrationForm.controls['email'].errors?.['required'] && isSubmitted)" class="text-danger">
+                Required</p>
+            </div>
+            <div class="form-group p-2">
+              <label class="form-label" for="password">Password</label>
+              <div class="input-group">
+                <span class="input-group-text">
+                  <i class="fa-solid fa-lock fa-lg"></i>
+                </span>
+                <input formControlName="password" type="password" class="form-control" id="password"
+                  placeholder="Password"
+                  [ngClass]="{'is-valid': registrationForm.controls['password'].valid, 'is-invalid': registrationForm.controls['password'].errors && isSubmitted}">
+              </div>
+              <p *ngIf="(registrationForm.controls['password'].errors?.['required'] && isSubmitted)"
+                class="text-danger">Required</p>
+              <p *ngIf="(registrationForm.controls['password'].errors?.['minlength'])" class="text-danger">Minimum 4
+                length is required</p>
+            </div>
+            <div class="form-group p-2">
+              <label for="role">Role</label>
+              <div class="input-group">
+                <span class="input-group-text">
+                  <i class="fa-solid fa-user fa-lg"></i>
+                </span>
+                <select formControlName="role" class="form-select" id="role">
+                  <option value="User">User</option>
+                  <option value="Admin">Admin</option>
+                </select>
+              </div>
+
+            </div>
+            <div class="p-2 d-flex gap-2 justify-content-center">
+              <button type="submit" class="btn btn-primary py-2 px-4">Register</button>
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <div class="row py-2">
+        <div class="col-12">
+          <p class="socialText">Click Here to <a routerLink="/auth/login">Login</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,22 @@
+$butttonThemeColor: #127369;
+
+.btn-primary {
+    background-color: $butttonThemeColor !important;
+    border: 1px solid #8AA6A3 !important;
+
+    &:hover {
+        background-color: #fff !important;
+        border: 1px solid $butttonThemeColor !important;
+        transition: .2s ease-in !important;
+        color: $butttonThemeColor;
+    }
+}
+
+.pageHeader {
+    font-weight: 500;
+    font-size: 20px;
+}
+
+.formCard {
+    box-shadow: 0px 0px 12px #BFBFBF;
+}

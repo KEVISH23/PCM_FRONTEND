@@ -1,0 +1,13 @@
+$themeColor: #2B3640;
+
+.btn-primary {
+    background-color: $themeColor !important;
+    border: 1px solid #fff !important;
+
+    &:hover {
+        background-color: #fff !important;
+        border: 1px solid $themeColor !important;
+        transition: .2s ease-in !important;
+        color: $themeColor;
+    }
+}

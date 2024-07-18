@@ -1,0 +1,33 @@
+<div class="row">
+  <div class="col-12">
+    <h1 class="text-center mt-3 pageHeader">{{pageTitle}}</h1>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-6 col-xl-6 col-lg-6 ms-auto me-auto col-12 formCard">
+    <form [formGroup]="addCategoryForm" (submit)="submitForm()" class="p-4">
+      <div class="row">
+        <div class="col-12 py-2">
+          <div class="form-group">
+            <label for="catName" class="form-label">Enter Category Name</label>
+            <input [ngClass]="{
+              'is-valid':addCategoryForm.controls['categoryName'].valid,
+              'is-invalid':addCategoryForm.controls['categoryName'].errors && addCategoryForm.controls['categoryName'].touched
+            }" type="text" formControlName="categoryName" class="form-control">
+            <div
+              *ngIf="addCategoryForm.controls['categoryName'].errors && addCategoryForm.controls['categoryName'].touched">
+              <p class="text-danger" *ngIf="addCategoryForm.controls['categoryName'].errors['required']">Required</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row d-flex justify-content-center">
+        <div class="col-12 py-2">
+          <div class="form-group mt-2">
+            <button type="submit" [disabled]="addCategoryForm.invalid" class="btn btn-primary ps-4 pe-4">{{btnName}}</button>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

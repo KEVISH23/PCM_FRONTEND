@@ -1,0 +1,5 @@
+<div class="d-flex justify-content-center gap-2 mt-2">
+  <button *ngIf="!path" type="button" (click)="onView()" class="btn btn-info rounded-5"><i class="fa-solid fa-eye "></i></button>
+  <button *ngIf="userRole==='Admin'" type="button" (click)="onEdit()" class="btn btn-info rounded-5"><i class="fa fa-pen-to-square "></i></button>
+  <button *ngIf="userRole==='Admin'" type="button" (click)="onDelete()" class="btn btn-info rounded-5"><i class="fa-solid fa-trash-can "></i></button>
+</div>

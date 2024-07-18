@@ -1,0 +1,36 @@
+$themeColor:#2B3640;
+$boxShoadow:#c6daec;
+
+
+.countCard{
+    box-shadow: 0px 0px 12px $boxShoadow;
+    border-radius: 15px;
+    .icon{
+        border: 1px solid $themeColor;
+        color: $themeColor;
+        border-radius: 25%;
+    }
+    .title{
+        font-weight: 700;
+        font-size: 22px;
+    }
+    .counts{
+        font-weight: 400;
+        font-size: 20px;
+    }
+
+    .btn-primary {
+        background-color: $themeColor !important;
+        border: 1px solid $themeColor !important;
+        font-size: 18px;
+        border-radius: 10px;
+    
+        &:hover {
+            background-color: #fff !important;
+            border: 1px solid $themeColor !important;
+            transition: .2s ease-in !important;
+            color: $themeColor;
+        }
+    }
+    
+}

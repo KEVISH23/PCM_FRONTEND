@@ -1,0 +1,30 @@
+<div class="countCard p-3">
+  <div class="row py-2">
+    <div class="col-12">
+      <span class="icon p-2"><i class="fa-solid fa-users fa-xl"></i></span>
+    </div>
+  </div>
+  <div class="row py-2">
+    <div class="col-12">
+      <div class="title">{{ title }}</div>
+    </div>
+  </div>
+  <div class="row py-2">
+    <div class="col-12">
+      <div class="counts">
+        {{ count }}
+      </div>
+    </div>
+  </div>
+  <div class="row py-2">
+    <div class="col-12">
+      <button
+        class="btn btn-primary"
+        [disabled]="disabled"
+        [routerLink]="routingLink"
+      >
+        {{ linkTitle }} <i class="ms-2 fa-solid fa-arrow-right"></i>
+      </button>
+    </div>
+  </div>
+</div>

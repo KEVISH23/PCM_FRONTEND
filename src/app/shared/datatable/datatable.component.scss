@@ -1,0 +1,50 @@
+$themeColor: #2B3640;
+
+.ag-theme-alpine.custom-theme {
+    --ag-background-color: #ffffff;
+    --ag-header-background-color:  #2b3640d8;;
+    --ag-header-foreground-color: #ffffff;
+    --ag-odd-row-background-color: #f9f9f9;
+    --ag-header-column-separator-color: #cccccc;
+    --ag-row-border-color: #dddddd;
+   
+    .ag-header-cell {
+      font-weight: bold;
+      font-size: 16px;
+    }
+   
+    .ag-cell {
+      font-size: 14px;
+      color: $themeColor;
+    }
+   
+    .ag-row {
+      transition: all 0.2s ease;
+    }
+   
+    .ag-row:hover {
+      background-color: var(--ag-row-hover-color);
+    }
+   
+    .ag-cell-focus {
+      box-shadow: 0 0 0 2px #007bff inset;
+    }
+   
+    .ag-icon {
+      fill: #007bff;
+    }
+   
+    .ag-paging-button,
+    .ag-icon-small {
+      color: #007bff;
+    }
+   
+    .event-card {
+      border: 1px solid #ccc;
+      padding: 20px;
+      margin-top: 20px;
+      background-color: #f9f9f9;
+    }
+   
+   
+  }

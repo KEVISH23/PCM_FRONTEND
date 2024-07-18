@@ -1,0 +1,188 @@
+<div *ngIf="isEditable" class="container">
+  <app-back-btn></app-back-btn>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <h4 class="pageHeader text-center mt-3">{{ pageTitle }}</h4>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xl-6 col-lg-6 col-md-6 col-10 rounded-3 formCard p-3">
+      <form
+        [formGroup]="addProductForm"
+        class="mx-auto"
+        (ngSubmit)="submitForm()"
+        enctype="multipart/form-data"
+      >
+        <div class="row">
+          <div class="col-12 py-2">
+            <div class="form-group">
+              <label for="title">Title</label>
+              <input
+                [ngClass]="{
+                  'is-valid': addProductForm.controls['title'].valid,
+                  'is-invalid':
+                    addProductForm.controls['title'].errors &&
+                    addProductForm.controls['title'].touched
+                }"
+                formControlName="title"
+                type="text"
+                class="form-control"
+                id="title"
+                placeholder="Enter event title"
+              />
+              <div
+                *ngIf="
+                  addProductForm.controls['title'].errors &&
+                  addProductForm.controls['title'].touched
+                "
+              >
+                <p
+                  class="text-danger"
+                  *ngIf="addProductForm.controls['title'].errors['required']"
+                >
+                  Required
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12 py-2">
+            <div class="form-group">
+              <label for="description">Description</label>
+              <textarea
+                [ngClass]="{
+                  'is-valid': addProductForm.controls['description'].valid,
+                  'is-invalid':
+                    addProductForm.controls['description'].errors &&
+                    addProductForm.controls['description'].touched
+                }"
+                formControlName="description"
+                class="form-control"
+                id="description"
+                rows="3"
+                placeholder="Enter event description"
+              ></textarea>
+              <div
+                *ngIf="
+                  addProductForm.controls['description'].errors &&
+                  addProductForm.controls['description'].touched
+                "
+              >
+                <p
+                  class="text-danger"
+                  *ngIf="
+                    addProductForm.controls['description'].errors['required']
+                  "
+                >
+                  Required
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12 py-2">
+            <div class="form-group">
+              <label for="address">Price</label>
+              <input
+                [ngClass]="{
+                  'is-valid': addProductForm.controls['price'].valid,
+                  'is-invalid':
+                    addProductForm.controls['price'].errors &&
+                    addProductForm.controls['price'].touched
+                }"
+                formControlName="price"
+                type="number"
+                class="form-control"
+                id="address"
+                placeholder="Enter price"
+              />
+              <div
+                *ngIf="
+                  addProductForm.controls['price'].errors &&
+                  addProductForm.controls['price'].touched
+                "
+              >
+                <p
+                  class="text-danger"
+                  *ngIf="addProductForm.controls['price'].errors['required']"
+                >
+                  Required
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12 py-2">
+            <div class="form-group">
+              <label for="image">Image</label>
+              <input
+                type="file"
+                (change)="fileChange($event)"
+                class="form-control"
+                id="image"
+                placeholder="Enter event image"
+              />
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12 py-2">
+            <div class="form-group">
+              <label for="date">Category</label>
+              <select
+                [ngClass]="{
+                  'is-valid': addProductForm.controls['categoryId'].valid,
+                  'is-invalid':
+                    addProductForm.controls['categoryId'].errors &&
+                    addProductForm.controls['categoryId'].touched
+                }"
+                formControlName="categoryId"
+                name="catrgory"
+                id=""
+                class="form-select"
+              >
+                <option disabled value="Select" selected>Select</option>
+                <option *ngFor="let data of categories" [value]="data._id">
+                  {{ data.categoryName }}
+                </option>
+              </select>
+              <div
+                *ngIf="
+                  addProductForm.controls['categoryId'].errors &&
+                  addProductForm.controls['categoryId'].touched
+                "
+              >
+                <p
+                  class="text-danger"
+                  *ngIf="
+                    addProductForm.controls['categoryId'].errors['required']
+                  "
+                >
+                  Required
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12 py-2 d-flex justify-content-center">
+            <button
+              type="submit"
+              class="btn btn-primary ps-5 pe-5"
+              [disabled]="
+                (addProductForm.invalid || !selectedFile) && !isEditable
+              "
+            >
+              {{ btnName }}
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,9 @@
+$themeColor: #2B3640;
+.navbar{
+    background-color: $themeColor !important;
+    .profileImage{
+        height: 50px;
+        width: 50px;
+        border-radius: 50%;
+    }
+}

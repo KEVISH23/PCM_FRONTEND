@@ -1,0 +1,124 @@
+$themeColor: #2B3640;
+$white : #fff;
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+.formCard{
+    box-shadow: 0px 0px 12px gainsboro;
+}
+.btn-primary {
+    background-color: $themeColor !important;
+    border: 1px solid $themeColor !important;
+    font-size: 18px;
+    border-radius: 10px;
+
+    &:hover {
+        background-color: #fff !important;
+        border: 1px solid $themeColor !important;
+        transition: .2s ease-in !important;
+        color: $themeColor;
+    }
+}
+
+a {
+    color: $themeColor;
+}
+
+.loginText {
+    font-family: "Libre Baskerville", serif;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 32px;
+    text-align: center;
+    line-height: 2.5rem;
+}
+
+.socialText {
+    font-family: "Libre Baskerville", serif;
+    font-weight: 400;
+    font-style: italic;
+    color: #878787;
+    font-size: 18px;
+
+    a {
+        color: black;
+        font-style: normal;
+        text-decoration: underline;
+    }
+}
+
+.icon {
+    border: 1px solid $themeColor;
+    border-radius: 50%;
+
+    span {
+        .facebookIcon {
+            color: $themeColor;
+        }
+
+        .goggleIcon {
+            color: $themeColor
+        }
+    }
+
+    &:hover {
+        span {
+            .facebookIcon {
+                color: #fff;
+            }
+
+            .goggleIcon {
+                color: #fff
+            }
+        }
+
+        background-color: $themeColor;
+        transition: all 0.35s ease;
+    }
+}
+
+.hr {
+    width: 75%;
+    color: #8AA6A3;
+    border: 1px solid;
+}
+
+.formRow {
+    width: 50% !important;
+
+    
+}
+@media only screen and (max-width: 991px) {
+    .formRow{
+        width: 100% !important;
+    }
+}
+.loginForm {
+
+    // box-shadow: 0px 0px 12px gainsboro;
+    .form-label {
+        font-size: 16px;
+    }
+
+    input {
+        border-radius: 22px;
+        padding: 10px;
+    }
+}
+
+.input-group-text {
+    background-color: $themeColor;
+    color: white;
+}
+.btn-info {
+
+    background-color: #fff !important;
+    border: 1px solid $themeColor !important;
+
+    &:hover {
+        background-color: $themeColor !important;
+        border: 1px solid #8AA6A3 !important;
+        transition: .2s ease-in !important;
+        color: #fff;
+    }
+}

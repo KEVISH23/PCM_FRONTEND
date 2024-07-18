@@ -1,0 +1,29 @@
+<div class="container-fluid">
+  <div class="row p-4">
+    <div class="ps-0 col-xl-4 col-lg-4 col-md-4 col-12">
+      <app-card
+        title="Total Users"
+        routingLink=""
+        linkTitle="Go to Users"
+        [count]="counts.userCount"
+        [disabled]="true"
+      ></app-card>
+    </div>
+    <div class="ps-0 col-xl-4 col-lg-4 col-md-4 col-12">
+      <app-card
+        title="Total Products"
+        routingLink="/viewProducts"
+        linkTitle="Go to Products"
+        [count]="counts.productsCount"
+      ></app-card>
+    </div>
+    <div class="ps-0 col-xl-4 col-lg-4 col-md-4 col-12">
+      <app-card
+        title="Total Categories"
+        routingLink="/category"
+        linkTitle="Go to Categories"
+        [count]="counts.categoriesCount"
+      ></app-card>
+    </div>
+  </div>
+</div>

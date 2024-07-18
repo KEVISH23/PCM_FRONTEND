@@ -1,0 +1,115 @@
+<div class="container">
+  <div class="row py-2 mt-2">
+    <div class="col-12 d-flex justify-content-center">
+      <h5 class="menuText text-white">Sidemenu</h5>
+    </div>
+  </div>
+  <div class="row py-2">
+    <div class="col-12">
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0 p-3">
+        <li class="nav-item py-2">
+          <a
+            class="nav-link text-white"
+            routerLinkActive="active"
+            aria-current="page"
+            routerLink="/"
+          >
+            Dashboard</a
+          >
+        </li>
+
+        <li class="nav-item py-2">
+          <a
+            class="nav-link text-white"
+            role="button"
+            (click)="toggleProducts()"
+            [attr.aria-expanded]="isProductCollapsed"
+            aria-controls="collapseExample"
+          >
+            Products
+            <span class="ms-1"
+              ><i
+                *ngIf="isProductCollapsed"
+                class="fa-solid fa-lg fa-caret-down"
+              ></i
+              ><i
+                *ngIf="!isProductCollapsed"
+                class="fa-solid fa-lg fa-caret-up"
+              ></i
+            ></span>
+          </a>
+          <div
+            #collapse="ngbCollapse"
+            class="dropdownMenu p-2"
+            [(ngbCollapse)]="isProductCollapsed"
+          >
+            <li class="nav-item py-2">
+              <a
+                class="nav-link"
+                routerLinkActive="active"
+                aria-current="page"
+                routerLink="/viewProducts"
+              >
+                View Products</a
+              >
+            </li>
+            <li class="nav-item py-2">
+              <a
+                class="nav-link"
+                routerLinkActive="active"
+                aria-current="page"
+                routerLink="/addEvent"
+              >
+                Add Products</a
+              >
+            </li>
+          </div>
+        </li>
+
+        <li class="nav-item py-2" *ngIf="userRole === 'Admin'">
+          <a
+            class="nav-link text-white"
+            role="button"
+            (click)="toggleCategories()"
+            [attr.aria-expanded]="isCategoryCollapsed"
+            aria-controls="collapseExample"
+          >
+            Categories
+            <span class="ms-1"
+              ><i
+                *ngIf="isCategoryCollapsed"
+                class="fa-solid fa-lg fa-caret-down"
+              ></i
+              ><i
+                *ngIf="!isCategoryCollapsed"
+                class="fa-solid fa-lg fa-caret-up"
+              ></i
+            ></span>
+          </a>
+          <div
+            #collapse="ngbCollapse"
+            class="dropdownMenu p-2"
+            [(ngbCollapse)]="isCategoryCollapsed"
+          >
+            <li class="nav-item py-2" *ngIf="userRole === 'Admin'">
+              <a
+                class="nav-link"
+                routerLink="/addCategory"
+                routerLinkActive="active"
+                >Add Category</a>
+            </li>
+            <li class="nav-item py-2" *ngIf="userRole === 'Admin'">
+                <a
+                  class="nav-link"
+                  routerLink="/category"
+                  routerLinkActive="active"
+                  >View Categories</a
+                >
+              </li>
+          </div>
+        </li>
+       
+      </ul>
+    </div>
+  </div>
+</div>

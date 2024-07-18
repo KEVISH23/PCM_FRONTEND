@@ -1,0 +1,136 @@
+<!-- <div class="card" style="width:25rem">
+    <div class="card-header h3 text-center p-4">
+        Login
+    </div>
+    <div class="card-body p-4">
+        <form [formGroup]="loginForm" (ngSubmit)="submitForm()">
+            <div class="form-group">
+                <label for="email">Email address</label>
+                <input formControlName="email" type="email" class="form-control" id="email" placeholder="Enter email"
+                    [ngClass]="{'is-valid': loginForm.controls['email'].valid, 'is-invalid': loginForm.controls['email'].touched && loginForm.controls['email'].invalid}">
+                <p *ngIf="(loginForm.controls['email'].errors?.['required'] && loginForm.controls['email'].touched )"
+                    class="text-danger">Required</p>
+            </div>
+            <div class="form-group mt-2">
+                <label for="password">Password</label>
+                <input formControlName="password" type="password" class="form-control" id="password"
+                    placeholder="Password"
+                    [ngClass]="{'is-valid': loginForm.controls['password'].valid, 'is-invalid': loginForm.controls['password'].touched && loginForm.controls['password'].invalid}">
+                <p *ngIf="(loginForm.controls['password'].errors?.['required'] && loginForm.controls['password'].touched )"
+                    class="text-danger">Required</p>
+                <p *ngIf="(loginForm.controls['password'].errors?.['minlength'] && loginForm.controls['password'].touched )"
+                    class="text-danger">Minimum 4 length is required</p>
+            </div>
+            <div class="d-flex flex-column gap-2 justify-content-center">
+                <button type="submit" class="mt-4 btn btn-primary" [disabled]="loginForm.invalid">Login</button>
+                <a class="text-center" routerLink="/auth/register">Register Here!!!</a>
+            </div>
+        </form>
+    </div>
+</div> -->
+
+
+
+
+<div class="row">
+    <div class="col-xl-6 col-lg-6 col-md-6 col-12 mx-auto">
+        <div class="container vh-100 d-flex flex-column justify-content-center align-items-center">
+            <div class="row py-2">
+                <div class="col-12">
+                    <p class="loginText">Login to your account</p>
+                </div>
+            </div>
+            <div class="row py-2">
+                <div class="col-12">
+                    <p class="socialText">Login using social accounts</p>
+                </div>
+            </div>
+            <div class="row mt-2 py-2">
+                <div class="col-12 d-flex gap-3">
+                    <div class="icon p-3">
+                        <span>
+                            <i class="fa-brands fa-facebook fa-xl facebookIcon"></i>
+                        </span>
+                    </div>
+                    <div class="icon p-3">
+                        <span>
+                            <i class="fa-brands fa-google fa-xl goggleIcon"></i>
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <div class="row py-2" style="width: 100%;">
+                <div class="col-12 d-flex justify-content-center">
+                    <hr class="hr">
+                </div>
+            </div>
+            <div class="row py-2">
+                <div class="col-12">
+                    <p class="socialText">Login using your credentials</p>
+                </div>
+            </div>
+            <div class="row py-2 formRow">
+                <div class="col-12">
+                    <form class="loginForm" [formGroup]="loginForm" (ngSubmit)="submitForm()">
+                        <div class="form-group p-2">
+                            <label class="form-label" for="email">Email address</label>
+                            <div class="input-group">
+                                <span class="input-group-text">
+                                    <i class="fa-regular fa-lg fa-envelope"></i>
+                                </span>
+                                <input formControlName="email" type="email" class="form-control" id="email"
+                                    placeholder="Enter email"
+                                    [ngClass]="{'is-valid': loginForm.controls['email'].valid, 'is-invalid':isSubmitted && loginForm.controls['email'].errors}">
+                            </div>
+
+                            <p *ngIf="(isSubmitted && loginForm.controls['email'].errors?.['required'])"
+                                class="text-danger">Required</p>
+                        </div>
+                        <div class="form-group p-2">
+                            <label class="form-label" for="password">Password</label>
+                            <div class="input-group">
+                                <span class="input-group-text">
+                                    <i class="fa-solid fa-lock fa-lg"></i>
+                                </span>
+                                <input formControlName="password" type="password" class="form-control" id="password"
+                                    placeholder="Password"
+                                    [ngClass]="{'is-valid': loginForm.controls['password'].valid, 'is-invalid': isSubmitted && loginForm.controls['password'].errors}">
+                            </div>
+                            <p *ngIf="(isSubmitted && loginForm.controls['password'].errors?.['required'])"
+                                class="text-danger">Required</p>
+                            <p *ngIf="(loginForm.controls['password'].errors?.['minlength'] && loginForm.controls['password'].touched )"
+                                class="text-danger">Minimum 4 length is required</p>
+                        </div>
+                        <div class="p-2 d-flex gap-2 justify-content-center">
+                            <button type="submit" class="btn btn-primary py-2 px-4">Login</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <div class="row py-2">
+                <div class="col-12">
+                    <p class="socialText">Click Here to <a routerLink="/auth/register">Register</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- <div class="col-xl-3 col-lg-3 col-md-5 col-12 d-flex flex-column justify-content-center align-items-center registerCard">
+        <div class="row py-3">
+            <div class="col-12">
+                <p class="loginText">New One?</p>
+            </div>
+        </div>
+        <div class="row py-3">
+            <div class="col-12">
+                <p class="socialText">Click on the button to register</p>
+            </div>
+        </div>
+        <div class="row py-3">
+            <div class="col-12">
+                <button routerLink="/auth/register" class="btn-info btn">Register Here</button>
+            </div>
+        </div>
+    </div> -->
+</div>
